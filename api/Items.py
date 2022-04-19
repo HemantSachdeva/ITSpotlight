@@ -2,7 +2,7 @@ import requests
 from flask import jsonify
 from flask_restful import Resource
 
-from api.methods import BASE_URL, get_story_ids
+from api.methods import BASE_URL, get_story_ids, time_parser
 
 
 class Items(Resource):
@@ -19,7 +19,7 @@ class Items(Resource):
             data = response.json()
             ret_json = {
                 "id": data.get("id"),
-                "time": data.get("time"),
+                "time": time_parser(data.get("time")),
                 "by": data.get("by"),
                 "title": data.get("title"),
                 "url": data.get("url"),
