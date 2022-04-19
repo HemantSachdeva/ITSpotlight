@@ -12,7 +12,7 @@ class Items(Resource):
         :return: List of news stories.
         """
         news = []
-        for id in get_story_ids():
+        for id in get_story_ids(1):
             endpoint = f"/item/{id}.json"
             url = BASE_URL + endpoint
             response = requests.get(url)
