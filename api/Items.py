@@ -23,7 +23,7 @@ class Items(Resource):
                 "time": time_parser(data.get("time")),
                 "by": data.get("by"),
                 "title": data.get("title"),
-                "url": data.get("url"),
+                "url": data.get("url") if data.get("url") else "",
                 "likes": data.get("score"),
                 "comments": data.get("descendants")
             }
