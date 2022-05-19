@@ -27,6 +27,12 @@ a:active {
   color: #cdfeaa;
 } */
 
+.data {
+  background-color: white;
+  border-radius: 10px;
+  padding-right: 10px;
+}
+
 .container.spotlight {
   display: flex;
   flex-direction: column;
