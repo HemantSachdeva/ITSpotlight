@@ -24,6 +24,7 @@ class Items(Resource):
                 "by": data.get("by"),
                 "title": data.get("title"),
                 "url": data.get("url") if data.get("url") else "",
+                "sliced_url": data.get("url").split("/")[2] if data.get("url") else "",
                 "likes": data.get("score"),
                 "comments": data.get("descendants")
             }

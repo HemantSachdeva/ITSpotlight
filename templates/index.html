@@ -40,8 +40,11 @@
                 <div class="discription">
                     <div class="title">{{ article.title }}</div>
                     <div class="meta-data">
-                        <div class="left">{{ article.url }}</div>
-                        <div class="right">{{ article.time }} - by<a href="/user/{{ article.by }}" target="_blank"> {{ article.by }}
+                        <a href="{{ article.url }}" target="_blank">
+                            <div class="left">{{ article.sliced_url }}</div>
+                        </a>
+                        <div class="right">{{ article.time }} - by
+                            <a href="/user/{{ article.by }}" target="_blank"> {{ article.by }}
                             </a>
                         </div>
                     </div>
