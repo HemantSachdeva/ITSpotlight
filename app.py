@@ -14,7 +14,7 @@ CORS(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    resp = requests.get('http://127.0.0.1:5000/items/page/1')
+    resp = requests.get('http://127.0.0.1:5000/api/items/page/1')
     latest_news = resp.json()
     context = {
         "latest_news": latest_news
@@ -22,5 +22,5 @@ def index():
     return render_template('index.html', context=context)
 
 
-api.add_resource(Items, "/items/page/<int:page>")
-api.add_resource(User, "/user/<string:username>")
+api.add_resource(Items, "/api/items/page/<int:page>")
+api.add_resource(User, "/api/user/<string:username>")
