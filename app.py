@@ -14,7 +14,7 @@ CORS(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    resp = requests.get('http://127.0.0.1:5000/api/items/page/1')
+    resp = requests.get('http://itspotlight.herokuapp.com/api/items/page/1')
     latest_news = resp.json()
     context = {
         "latest_news": latest_news
