@@ -124,8 +124,18 @@ a:active {
   color: blue;
 }
 .spotlight .data .discription .actions-row span:nth-of-type(2) {
-  color: orange;
+  color: red;
 }
+.spotlight .data .discription .actions-row a {
+  text-decoration: none;
+}
+.spotlight .data .discription .actions-row a:hover {
+  font-weight: bolder;
+}
+.spotlight .data .discription .actions-row a .no-link {
+  color: red;
+}
+
 @media screen and (max-width: 720px) {
   body {
     font-size: 15px;
