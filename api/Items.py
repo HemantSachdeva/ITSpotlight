@@ -26,7 +26,7 @@ class Items(Resource):
                 "url": data.get("url") if data.get("url") else "",
                 "sliced_url": data.get("url").split("/")[2] if data.get("url") else "",
                 "likes": data.get("score"),
-                "comments": data.get("descendants")
+                "comments": data.get("descendants") if data.get("descendants") else 0
             }
             news.append(ret_json)
         return jsonify(news)
