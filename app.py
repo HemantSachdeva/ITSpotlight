@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from flask_cors import CORS
 from flask_restful import Api
 import requests
 
@@ -8,7 +7,6 @@ from api.User import User
 
 app = Flask(__name__)
 api = Api(app)
-CORS(app)
 
 
 @app.route('/')
