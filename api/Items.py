@@ -18,14 +18,15 @@ class Items(Resource):
             url = BASE_URL + endpoint
             response = requests.get(url)
             data = response.json()
-            ret_json = {
-                "id": data.get("id"),
-                "time": time_parser(data.get("time")),
-                "by": data.get("by"),
-                "title": data.get("title"),
-                "url": data.get("url") if data.get("url") else "",
-                "sliced_url": data.get("url").split("/")[2] if data.get("url") else "",
-                "likes": data.get("score")
-            }
+            if data.get('url'):
+                ret_json = {
+                    "id": data.get("id"),
+                    "time": time_parser(data.get("time")),
+                    "by": data.get("by"),
+                    "title": data.get("title"),
+                    "url": data.get("url"),
+                    "sliced_url": data.get("url").split("/")[2],
+                    "likes": data.get("score")
+                }
             news.append(ret_json)
         return jsonify(news)
