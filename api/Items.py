@@ -6,14 +6,14 @@ from api.methods import BASE_URL, get_story_ids, time_parser
 
 
 class Items(Resource):
-    def get(self, page):
+    def get(self, type, page):
         """
         Returns a list of news stories when given a page number (10 stories per page).
         :param page: Page number.
         :return: List of news stories.
         """
         news = []
-        for id in get_story_ids(page):
+        for id in get_story_ids(type, page):
             endpoint = f"/item/{id}.json"
             url = BASE_URL + endpoint
             response = requests.get(url)

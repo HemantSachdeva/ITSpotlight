@@ -5,13 +5,13 @@ import requests
 BASE_URL = "https://hacker-news.firebaseio.com/v0"
 
 
-def get_story_ids(page):
+def get_story_ids(type, page):
     """
     Returns a list of 10 story ids per page.
     :return: List of 10 story ids per page.
     """
     # Get list of ids for the latest news stories.
-    endpoint = f"/newstories.json"
+    endpoint = f"/{type}.json"
     url = BASE_URL + endpoint
     response = requests.get(url)
     data = response.json()

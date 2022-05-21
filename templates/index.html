@@ -19,7 +19,7 @@
     <div class="container spotlight">
         <h1>IT<span>Spotlight</span></h1>
         <div class="header">
-            <div class="left">Latest news</div>
+            <div class="left">{{ context.title }}</div>
             <div class="right">
                 <div class="dropdown action">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -27,14 +27,15 @@
                         Menu
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="/index">Home</a></li>
-                        <li><a class="dropdown-item" href="#">Trending</a></li>
+                        <li><a class="dropdown-item" href="/">Home</a></li>
+                        <li><a class="dropdown-item" href="/topstories">Trending News</a></li>
+                        <li><a class="dropdown-item" href="/jobstories">Hiring News</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="data">
-            {% for article in context.latest_news %}
+            {% for article in context.news %}
             <li>
                 <div class="number"><span>{{ loop.index }}</span></div>
                 <div class="discription">
