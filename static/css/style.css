@@ -37,6 +37,10 @@ a:active {
   text-decoration: none;
 }
 
+.no-link:hover {
+  font-weight: bolder;
+}
+
 .container.spotlight {
   display: flex;
   flex-direction: column;
@@ -129,9 +133,6 @@ a:active {
 }
 .spotlight .data .discription .actions-row span:nth-of-type(2) {
   color: red;
-}
-.spotlight .data .discription .actions-row a:hover {
-  font-weight: bolder;
 }
 .spotlight .data .discription .actions-row .no-link span {
   color: red;
