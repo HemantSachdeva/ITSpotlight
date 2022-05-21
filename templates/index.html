@@ -43,13 +43,13 @@
                     <div class="meta-data">
                         <div class="left">{{ article.sliced_url }}</div>
                         <div class="right">{{ article.time }} - by
-                            <a href="/api/user/{{ article.by }}" target="_blank"> {{ article.by }}
+                            <a class="no-link" href="/api/user/{{ article.by }}" target="_blank"> {{ article.by }}
                             </a>
                         </div>
                     </div>
                     <div class="actions-row">
                         <span><i class="fa-solid fa-arrow-up"></i></i>{{ article.likes }}</span>
-                        <a href="{{ article.url }}" target="_blank"><span class="no-link"><i class="fa-solid fa-book-reader"></i>Read full article</span></a>
+                        <a class="no-link" href="{{ article.url }}" target="_blank"><span><i class="fa-solid fa-book-reader"></i>Read full article</span></a>
                     </div>
                 </div>
             </li>
