@@ -38,6 +38,19 @@ def get_story_ids(type, page):
     return data[start_index:end_index]
 
 
+def get_item(id):
+    """
+    Returns an item from the API.
+    :param id: Item id.
+    :return: Item.
+    """
+    endpoint = f"/item/{id}.json"
+    url = BASE_URL + endpoint
+    response = requests.get(url)
+    data = response.json()
+    return data
+
+
 def time_parser(unix_time):
     """
     Compares the current time to the time of the last update.

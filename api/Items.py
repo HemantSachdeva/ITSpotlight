@@ -15,11 +15,10 @@
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  """
 
-import requests
 from flask import jsonify
 from flask_restful import Resource
 
-from api.methods import BASE_URL, get_story_ids, time_parser
+from api.methods import get_story_ids, get_item, time_parser
 
 
 class Items(Resource):
@@ -31,10 +30,7 @@ class Items(Resource):
         """
         news = []
         for id in get_story_ids(type, page):
-            endpoint = f"/item/{id}.json"
-            url = BASE_URL + endpoint
-            response = requests.get(url)
-            data = response.json()
+            data = get_item(id)
             if data.get('url'):
                 ret_json = {
                     "id": data.get("id"),
