@@ -1,1 +1,11 @@
-Hey there, I am {{ context.username }}!
+{% extends 'base.html' %}
+{% block title %} | User profile{% endblock %}
+{% block header %} User profile{% endblock %}
+{% block content %}
+<div class="data" style="padding-left: 10px;">
+    Hey there, I am {{ context.username }}! <br>
+    About: {{ context.about }} <br>
+    Account created: {{ context.account_created }} <br>
+    Posted: {{ context.total_posts }} articles.<br>
+</div>
+{% endblock %}
