@@ -54,5 +54,12 @@ def index(type="newstories", page=1):
     return render_template('index.html', context=context)
 
 
+@app.route('/user/<string:username>')
+def user_profile(username):
+    resp = requests.get(f"http://itspotlight.herokuapp.com/api/user/{username}")
+    user = resp.json()
+    return render_template('user.html', context=user)
+
+
 api.add_resource(Items, "/api/items/<string:type>/page/<int:page>")
 api.add_resource(User, "/api/user/<string:username>")
