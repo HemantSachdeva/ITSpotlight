@@ -15,6 +15,9 @@
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  """
 
+from html import unescape
+from re import compile, sub
+
 import requests
 from flask import jsonify
 from flask_restful import Resource
@@ -33,6 +36,16 @@ class User(Resource):
         url = BASE_URL + endpoint
         response = requests.get(url)
         data = response.json()
+
+        pattern = compile('<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});')
+        if data.get("about"):
+            """
+            Replace HTML tags with spaces.
+            Encode HTML entities like &amp; to &, &lt; to <, etc.
+            """
+            data["about"] = sub(pattern=pattern,
+                                repl=' ',
+                                string=unescape(data["about"]))
         ret_json = {
             "about": data.get("about") if data.get("about") else "No about info.",
             "account_created": time_parser(data.get("created")),
