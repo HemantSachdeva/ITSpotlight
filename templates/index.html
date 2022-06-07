@@ -5,7 +5,12 @@
 <div class="data">
     {% for article in context.news %}
     <li>
-        <div class="number"><span>{{ loop.index }}</span></div>
+        <div class="number"><span>{% if context.page > 1 %}
+                {{ loop.index + 10 * (context.page - 1) }}
+                {% else %}
+                {{ loop.index }}
+                {% endif %}
+            </span></div>
         <div class="discription">
             <div class="title">{{ article.title }}</div>
             <div class="meta-data">
