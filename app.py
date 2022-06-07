@@ -49,7 +49,8 @@ def index(type="newstories", page=1):
 
     context = {
         "news": news,
-        "title": title
+        "title": title,
+        "type": type
     }
     return render_template('index.html', context=context)
 

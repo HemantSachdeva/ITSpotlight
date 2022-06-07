@@ -37,6 +37,15 @@
         {% block content %}
         {% endblock %}
     </div>
+    {% if context.type %}
+    <nav aria-label="page navigation">
+        <ul class="pagination justify-content-center">
+            {% for page in range(1, 6) %}
+            <li class="page-item"><a class="page-link" href="/{{ context.type }}/{{ page }}">{{ page }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endif %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
