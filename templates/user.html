@@ -1,11 +1,52 @@
-{% extends 'base.html' %}
-{% block title %} | User profile{% endblock %}
-{% block header %} User profile{% endblock %}
-{% block content %}
-<div class="data" style="padding-left: 10px;">
-    Hey there, I am {{ context.username }}! <br>
-    About: {{ context.about }} <br>
-    Account created: {{ context.account_created }} <br>
-    Posted: {{ context.total_posts }} articles.<br>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITSpotlight | User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+</head>
+
+<body style="background-color: darkgrey;">
+    <div class="profile-container">
+        <div class="grid-7 element-animation">
+            <div class="grid-7 element-animation">
+                <div class="card color-card-2">
+                    <ul>
+                        <li><i class="fas fa-arrow-left i-l b cursor" onclick="window.close()"></i></li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1652391548004-320873f6c54f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+                        alt="profile-pic" class="profile">
+                    <h1 class="title-2">@{{ context.username }}</h1>
+                    <div class="desc top">
+                        <p>{{ context.about[0:100] }}</p>
+                    </div>
+                    <hr class="hr-2">
+                    <div class="profile-container">
+                        <div class="content">
+                            <div class="grid-2">
+                                <button class="color-b circule"> <i class="fab fa-pied-piper fa-2x"></i></button>
+                                <h2 class="title-2">{{ context.total_posts }}</h2>
+                                <p class="category">Contributed Articles</p>
+                            </div>
+                            <div class="grid-2">
+                                <button class="color-c circule"><i class="fab fa-behance fa-2x"></i></button>
+                                <h2 class="title-2">{{ context.account_created }}</h2>
+                                <p class="category">Joining</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+</body>
+
+</html>
