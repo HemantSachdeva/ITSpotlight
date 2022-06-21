@@ -41,5 +41,5 @@ class Items(Resource):
                     "sliced_url": data.get("url").split("/")[2],
                     "likes": data.get("score")
                 }
-            news.append(ret_json)
+                news.append(ret_json)
         return jsonify(news)
