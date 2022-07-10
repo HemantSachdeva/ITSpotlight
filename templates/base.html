@@ -43,9 +43,23 @@
     {% if context.type %}
     <nav aria-label="page navigation">
         <ul class="pagination justify-content-center">
-            {% for page in range(1, 6) %}
-            <li class="page-item"><a class="page-link" href="/{{ context.type }}/{{ page }}">{{ page }}</a></li>
-            {% endfor %}
+            <ul class="pagination">
+                {% if context.page != 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="/{{ context.type }}/{{context.page - 1 }}">&laquo; Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/{{ context.type }}/{{ context.page - 1 }}">{{
+                        context.page - 1 }}</a></li>
+                {% endif %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="/{{ context.type }}/{{ context.page }}">{{ context.page }}</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/{{ context.type }}/{{ context.page + 1 }}">{{
+                        context.page + 1 }} </a></li>
+                <li class="page-item">
+                    <a class="page-link" href="/{{ context.type }}/{{ context.page + 1 }}">Next &raquo;</a>
+                </li>
+            </ul>
         </ul>
     </nav>
     {% endif %}
