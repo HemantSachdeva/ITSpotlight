@@ -37,9 +37,12 @@ def index(type="newstories", page=1):
     if type not in ALLOWED_TYPES:
         type = "newstories"
 
+    if page < 1 or page > 100:
+        page = 1
+
     resp = requests.get(f"http://itspotlight.herokuapp.com/api/items/{type}/page/{page}")
     news = resp.json()
-    
+
     if type == "newstories":
         title = "Latest News"
     elif type == "topstories":
