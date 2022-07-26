@@ -5,7 +5,6 @@
 [![GitHub](https://img.shields.io/github/license/HemantSachdeva/ITSpotlight?style=plastic)](https://github.com/HemantSachdeva/ITSpotlight/blob/main/LICENSE.md)
 ![GitHub repo size](https://img.shields.io/github/repo-size/HemantSachdeva/ITSpotlight?style=plastic)
 ![Lines of code](https://img.shields.io/tokei/lines/GitHub/HemantSachdeva/ITSpotlight?style=plastic&label=lines%20of%20code)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/HemantSachdeva/ITSpotlight?style=plastic)
 
 </div>
 
